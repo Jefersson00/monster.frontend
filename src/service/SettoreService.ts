@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { AbstractService } from './abstractservice';
-import { CittaDTO } from 'src/dto/cittadto';
+import { SettoreDTO } from 'src/dto/SettoreDTO';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -8,10 +8,10 @@ import { Observable } from 'rxjs';
     providedIn: 'root'
 })
 
-export class CittaService extends AbstractService<CittaDTO>{
+export class SettoreService extends AbstractService<SettoreDTO>{
 
     constructor(http: HttpClient){
         super(http);
-        this.type= "citta";
+        this.type= "settore";
     }
 }
