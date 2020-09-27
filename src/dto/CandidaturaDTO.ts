@@ -1,4 +1,4 @@
-export class AziendaDTO {
+export class CandidaturaDTO {
 
 	
 
