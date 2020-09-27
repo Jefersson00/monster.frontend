@@ -1,13 +1,26 @@
 export class AziendaDTO {
 
-    username: string;
+	
 
-    password: string;
+    id: number;
 
-    rememberMe: boolean;
+    annoFondazione : Date;
 
-    constructor(username: string, password: string) {
-        this.username = username;
-        this.password = password;
-    }
+    descrizione : string;
+
+    email: string;
+
+    link : string;
+
+    logo : string;
+
+    nome: string;
+    
+    numeroDipendenti : number;
+
+    password : string;
+
+    settore: string;
+
+	
 }
