@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 export abstract class AbstractService<DTO> implements Service<DTO> {
 
     type: string;
-    port: string = '8080';
+    port: string = ':8080';
     project: string = '/monster';
 
     ip: string = 'http://localhost';
