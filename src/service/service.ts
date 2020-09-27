@@ -2,7 +2,7 @@ import { Observable } from 'rxjs';
 
 export interface Service<DTO> {
 
-    read(id: number): Observable<DTO> ;
+    getById(id: number): Observable<DTO> ;
 
     delete(id: number): Observable<any>;
 
@@ -11,5 +11,7 @@ export interface Service<DTO> {
     insert(dto: DTO): Observable<any>;
 
     getAll(): Observable<DTO[]>;
+
+    deleteAll(): Observable<any>;
 
 }

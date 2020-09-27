@@ -6,6 +6,7 @@ export abstract class AbstractService<DTO> implements Service<DTO> {
 
     type: string;
     port: string = '8080';
+    project: string = '/monster';
 
     ip: string = 'http://localhost';
 
@@ -13,24 +14,28 @@ export abstract class AbstractService<DTO> implements Service<DTO> {
     }
 
     getAll(): Observable<DTO[]> {
-        return this.http.get<DTO[]>(this.ip+':' + this.port + '/' + this.type + '/getall');
+        return this.http.get<DTO[]>(this.ip + this.port+ this.project + '/' + this.type + '/');
     }
 
-    read(id: number): Observable<DTO> {
-        return this.http.get<DTO>('http://localhost:' + this.port + '/' + this.type + '/read?id=' + id);
+    getById(id: number): Observable<DTO> {
+        return this.http.get<DTO>( this.ip + this.port + this.project + '/' + this.type + '/' + id);
     }
 
     delete(id: number): Observable<any> {
-        return this.http.delete('http://localhost:' + this.port + '/' + this.type + '/delete?id=' + id);
+        return this.http.delete( this.ip + this.port + this.project + '/' + this.type + '/' + id);
     }
 
     insert(dto: DTO): Observable<any> {
-        return this.http.post('http://localhost:' + this.port + '/' + this.type + '/insert', dto);
+        return this.http.post(this.ip + this.port + this.project + '/' + this.type + '/', dto);
     }
 
     update(dto: DTO): Observable<DTO> {
-        return this.http.put<DTO>('http://localhost:' + this.port + '/' + this.type + '/update', dto);
+        return this.http.put<DTO>( this.ip + this.port + this.project + '/' + this.type + '/', dto);
 
+    }
+
+    deleteAll(): Observable<any> {
+        return this.http.delete( this.ip + this.port+ this.project + '/' + this.type + '/' )
     }
 
 }
