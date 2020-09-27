@@ -1,29 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ToolbarHomeComponent } from './toolbar-home/toolbar-home.component';
-import { ToolbarComponent } from './toolbar/toolbar.component';
-import { ToolbarLoginComponent } from './toolbar-login/toolbar-login.component';
-import { FormLoginComponent } from './form-login/form-login.component';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
+import { FooterComponent } from './footer/footer.component';
+import { LoginDashboardComponent } from './login-dashboard/login-dashboard.component';
+import { LoginDashboardModule } from './login-dashboard/login-dashboard.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ToolbarComponent,
-    ToolbarLoginComponent,
-    FormLoginComponent,
-    LoginComponent,
-    HomeComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,
+    LoginDashboardModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

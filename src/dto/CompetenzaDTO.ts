@@ -8,4 +8,11 @@ export class CompetenzaDTO {
 
     nome : string;
 
+
+    constructor(id: number, descrizione: string, nome: string) {
+        this.id = id;
+        this.descrizione = descrizione;
+        this.nome = nome;
+    }
+
 }
