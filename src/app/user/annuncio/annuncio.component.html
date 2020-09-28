@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row-mt-5">
+     
+  
+ 
+  
+      <div class="col-mid-10">
+        <table>
+          <tr>
+            <th>descrizione</th>
+            <th>contratto</th>
+            <th>data publicazione</th>
+          </tr>
+          <tr *ngFor="let annuncio of annuncios">
+            <td>
+              <input [(ngModel)]="annuncio.descrizione">
+            </td>
+            <td>
+              <input [(ngModel)]="annuncio.contratto">
+            </td>
+            <td>
+              <input [(ngModel)]="annuncio.dataPubblicazione">
+            </td>
+          </tr>
+        </table>
+      </div>
+     
+    </div>
+
+
+</div>

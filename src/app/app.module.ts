@@ -3,19 +3,24 @@ import { NgModule,CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FooterComponent } from './footer/footer.component';
 import { LoginDashboardComponent } from './login-dashboard/login-dashboard.component';
 import { LoginDashboardModule } from './login-dashboard/login-dashboard.module';
+import { HttpClientModule } from '@angular/common/http';
+import { HomeModule } from './home/home.module';
+import { UserModule } from './user/user.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    FooterComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     LoginDashboardModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HomeModule,
+    UserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
